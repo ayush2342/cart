@@ -8,7 +8,7 @@ class Cart extends React.Component{
     {
         super();
         this.state={
-            product:[
+            products:[
                 {
                     title:'Mobile Phone',
                     price:'1000',
@@ -32,15 +32,59 @@ class Cart extends React.Component{
                 }
             ]
         }
-        // this.increaseQuantity=this.increaseQuantity.bind(this)
     }
+
+    handleIncreaseQuantity = (product)=>
+    {
+        const {products} =this.state;
+
+        const index= products.indexOf(product);
+        products[index].qty+=1;
+
+        this.setState(
+            {
+                products
+            }
+        )
+
+    }
+
+    handleDecreaseQuantity = (product)=>
+    {
+        const {products} =this.state;
+
+        const index= products.indexOf(product);
+        if(products[index].qty==0)
+        {
+            return;
+        }
+        products[index].qty-=1;
+        
+
+        this.setState(
+            {
+                products
+            }
+        )
+
+    }
+
     render()
     {
-        const {product}=this.state;
+        const {products}=this.state;
         return(
         <div className='cart'>
-            {product.map((product)=>{
-                return  <CartItem product={product} key={product.id}/>
+            {
+            products.map((product)=>
+            {
+                return (
+                    <CartItem 
+                    product={product} 
+                    key={product.id}
+                    increaseQuantity={this.handleIncreaseQuantity}
+                    decreaseQuantity={this.handleDecreaseQuantity}
+                    />
+                    ) 
             })}
            
         </div>
