@@ -11,8 +11,8 @@ const CartItem =(props)=>{
             </div>
             <div className='right-block'>
                 <div style={{fontSize:25}}>{title}</div>
-                <div style={{color:'#777'}}>Rs {price}</div>
-                <div style={{color:'#777'}}>Qty: {qty}</div>
+                <div>Rs {price}</div>
+                <div>Qty: {qty}</div>
                 <div className='cart-item-actions'>
                     {/* {button} */}
                     <img src="https://t4.ftcdn.net/jpg/01/07/62/07/240_F_107620769_UwNVSoXnKS4VNcOKoZjPohlEPn83oE38.jpg" 
@@ -41,7 +41,6 @@ const style={
         height:100,
         width:115,
         borderRadius:4,
-        background:'#ccc'
     }
 }
 

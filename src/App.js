@@ -110,7 +110,7 @@ class App extends React.Component {
     }
     render(){
       return (
-        <div className="App">
+        <div className="App" style={{backgroundImage: "url('https://i.pinimg.com/222x/1f/75/1c/1f751cd55f2853a18c2e4a23e01e86a0.jpg')",backgroundSize:'cover'}}>
           <Navbar 
           count={this.getCartCount()}/>
         <Cart
