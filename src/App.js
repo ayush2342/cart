@@ -119,7 +119,7 @@ class App extends React.Component {
         decreaseQuantity={this.handleDecreaseQuantity}
         onDelete={this.handleDeleteProduct}/>
 
-        <div style={{fontSize:25,paddingLeft:20}}>Total : {this.cartTotal()}</div>
+        <div style={{fontSize:25,paddingLeft:20,color:'white'}}>Total : {this.cartTotal()}</div>
         </div>
       );
     }
